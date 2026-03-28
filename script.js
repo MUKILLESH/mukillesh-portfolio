@@ -9,6 +9,33 @@ const chatForm = document.getElementById('chat-form');
 const chatInput = document.getElementById('chat-input');
 const chatMessages = document.getElementById('chat-messages');
 
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+const navLinks = document.querySelectorAll('nav ul li a');
+
+// ---------- MOBILE NAV MENU ----------
+if (hamburger && nav) {
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        const icon = hamburger.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            const icon = hamburger.querySelector('i');
+            if (icon) {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            }
+        });
+    });
+}
+
 
 // ---------- MASCOT EYE TRACK ----------
 let mouseX = window.innerWidth / 2;

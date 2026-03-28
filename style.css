@@ -844,6 +844,46 @@ footer {
   }
 }
 
+@media (max-width: 480px) {
+  section {
+    padding: 60px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-contact-container {
+    padding: 40px 20px;
+  }
+  
+  .timeline {
+    padding-left: 20px;
+  }
+  
+  .timeline-item {
+    padding: 20px;
+  }
+  
+  .timeline-item::before {
+    left: -29px;
+  }
+  
+  .about-content {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
 
 
 .chatbot-container {
