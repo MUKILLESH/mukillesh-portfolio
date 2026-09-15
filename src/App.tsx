@@ -60,7 +60,7 @@ function App() {
 
       {/* Portfolio — visible behind the intro overlay, ready for the seamless handoff */}
       <div style={{
-        visibility: introComplete ? 'visible' : 'hidden',
+        visibility: 'visible',
       }}>
         <Hero introComplete={introComplete} />
         <About />

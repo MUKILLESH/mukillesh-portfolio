@@ -67,12 +67,29 @@ export const Projects: React.FC = () => {
         duration: 1
       }, 0);
 
-      // 2. Animate the background color. 
+      // 2. Internal Parallax for giant background numbers
+      tl.to('.project-number', {
+        x: -200,
+        ease: 'none',
+        duration: 1
+      }, 0);
+
+      // 3. Animate the background color.
       tl.to(containerRef.current, {
         keyframes: projects.slice(1).map(p => ({ backgroundColor: p.bgColor })),
         ease: 'none',
         duration: 1
       }, 0);
+
+      gsap.to('.reveal-text span', {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%"
+        },
+        y: 0,
+        duration: 1,
+        ease: 'power3.out'
+      });
 
     }, containerRef);
 
@@ -83,7 +100,9 @@ export const Projects: React.FC = () => {
     <section ref={containerRef} style={{ height: '100vh', overflow: 'hidden', backgroundColor: projects[0].bgColor, position: 'relative' }}>
 
       <div style={{ position: 'absolute', top: '10vh', left: '5vw', zIndex: 10 }}>
-        <h2 className="heading-lg" style={{ color: '#fff' }}>SELECTED WORKS</h2>
+        <h2 className="heading-lg reveal-text" style={{ color: '#fff' }}>
+          <span>SELECTED WORKS</span>
+        </h2>
       </div>
 
       <div
@@ -138,17 +157,20 @@ export const Projects: React.FC = () => {
               </motion.a>
             </div>
 
-            <div style={{
-              position: 'absolute',
-              right: '10%',
-              bottom: '-10%',
-              fontSize: '40vw',
-              fontWeight: 700,
-              color: 'rgba(255,255,255,0.1)',
-              fontFamily: 'var(--font-heading)',
-              pointerEvents: 'none',
-              lineHeight: 0.8
-            }}>
+            <div
+              className="project-number"
+              style={{
+                position: 'absolute',
+                right: '10%',
+                bottom: '-10%',
+                fontSize: '40vw',
+                fontWeight: 700,
+                color: 'rgba(255,255,255,0.1)',
+                fontFamily: 'var(--font-heading)',
+                pointerEvents: 'none',
+                lineHeight: 0.8
+              }}
+            >
               {proj.number}
             </div>
           </div>

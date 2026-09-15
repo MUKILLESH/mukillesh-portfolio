@@ -17,14 +17,24 @@ export const Education: React.FC = () => {
             scrollTrigger: {
               trigger: item,
               start: "top 90%",
-              end: "bottom 70%",
-              scrub: 1
+              toggleActions: "play none none reverse"
             },
             y: 0,
             opacity: 1,
-            ease: "none"
+            duration: 0.8,
+            ease: "power2.out"
           }
         );
+      });
+
+      gsap.to('.reveal-text span', {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%"
+        },
+        y: 0,
+        duration: 1,
+        ease: 'power3.out'
       });
     }, containerRef);
 
@@ -63,7 +73,9 @@ export const Education: React.FC = () => {
   return (
     <section ref={containerRef} style={{ padding: '15vh 0', backgroundColor: 'var(--bg-color)', position: 'relative' }}>
       <div className="container" style={{ maxWidth: '1000px' }}>
-        <h2 className="heading-lg" style={{ textAlign: 'center', marginBottom: '10vh', color: 'var(--text-primary)' }}>ACADEMICS</h2>
+        <h2 className="heading-lg reveal-text" style={{ textAlign: 'center', marginBottom: '10vh', color: 'var(--text-primary)' }}>
+          <span>ACADEMICS</span>
+        </h2>
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8vh' }}>
           {eduData.map((edu, idx) => (
