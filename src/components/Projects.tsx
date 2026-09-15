@@ -67,7 +67,7 @@ export const Projects: React.FC = () => {
         duration: 1
       }, 0);
 
-      // 2. Animate the background color. 
+      // 2. Animate the background color.
       tl.to(containerRef.current, {
         keyframes: projects.slice(1).map(p => ({ backgroundColor: p.bgColor })),
         ease: 'none',
