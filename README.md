@@ -1,35 +1,32 @@
-Mukillesh Portfolio Website
-A modern, responsive personal portfolio website showcasing skills, projects, and academic journey as a Computer Science undergraduate.
-About the Project
-This portfolio website presents technical skills, projects, and experience in an interactive and visually engaging way. It includes smooth animations, a cinematic UI, and an AI-powered assistant.
-Features
-•	Modern UI/UX with glassmorphism and cinematic effects
-•	AI Assistant Chatbot (Gemini API)
-•	Interactive mascot with eye-tracking
-•	Ambient animated background
-•	Responsive design
-•	Projects showcase
-•	Contact form UI
-Tech Stack
-•	HTML5
-•	CSS3
-•	JavaScript
-•	Font Awesome
-•	Google Fonts
-•	Gemini API
-Project Structure
-index.html
-style.css
-script.js
-Setup Instructions
-1. Clone the repository
-2. Open the project folder
-3. Run index.html in your browser
-Deployment
-Can be deployed using Netlify, GitHub Pages, or Vercel.
-For Netlify, set Publish directory to root (/).
-Important Note
-Do not expose API keys in frontend code. Use environment variables or backend for production.
-Contact
-LinkedIn: https://www.linkedin.com/in/mukillesh
-GitHub: https://github.com/mukillesh
+# React + TypeScript + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the Oxlint configuration
+
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+```
+
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
