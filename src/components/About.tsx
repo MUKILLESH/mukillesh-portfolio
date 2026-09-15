@@ -17,11 +17,11 @@ export const About: React.FC = () => {
           scrollTrigger: {
             trigger: textRef.current,
             start: "top 80%",
-            toggleActions: "play none none reverse"
+            end: "bottom 60%",
+            scrub: 1
           },
           opacity: 1,
           y: 0,
-          duration: 1.2,
           ease: "power2.out"
         }
       );
@@ -38,19 +38,9 @@ export const About: React.FC = () => {
           y: 0,
           stagger: 0.1,
           duration: 0.8,
-          ease: "power3.out"
+          ease: "back.out(1.7)"
         }
       );
-
-      gsap.to('.reveal-text span', {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%"
-        },
-        y: 0,
-        duration: 1,
-        ease: 'power3.out'
-      });
 
     }, sectionRef);
 
@@ -64,9 +54,7 @@ export const About: React.FC = () => {
       <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5vw', alignItems: 'center' }}>
         
         <div>
-          <h2 className="heading-lg reveal-text" style={{ marginBottom: '2rem', color: 'var(--text-primary)' }}>
-            <span>ABOUT</span>
-          </h2>
+          <h2 className="heading-lg" style={{ marginBottom: '2rem', color: 'var(--text-primary)' }}>ABOUT</h2>
           <p ref={textRef} style={{ fontSize: 'clamp(1.2rem, 2vw, 1.8rem)', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
             I am a motivated Computer Science undergraduate at Vellore Institute of Technology. 
             My foundation lies deeply in programming, data structures, and algorithmic problem solving. 
